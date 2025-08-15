@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishan Khurana | Professional Wedding Officiant in Vancouver, BC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        :root {
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+        }
+
+        .font-heading {
+            font-family: var(--font-heading);
+
+        }
+
+
+        /* Custom animations */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #C9B386;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .glassmorphism {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .elegant-shadow {
+            box-shadow: 0 4px 30px rgba(128, 0, 32, 0.1);
+        }
+
+        .mobile-menu-item {
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideIn 0.3s ease forwards;
+        }
+        
+        
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hamburger {
+            width: 24px;
+            height: 18px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #800020;
+            border-radius: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 8px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 16px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 8px;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 8px;
+        }
+
+        .font-heading {
+            font-family: var(--font-heading);
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #800020 0%, #C9B386 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(128, 0, 32, 0.15);
+        }
+
+        .morphing-blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+
+            0%,
+            100% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+
+            50% {
+                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            }
+        }
+
+        .text-reveal {
+            background: linear-gradient(90deg, transparent 0%, #343434 50%, transparent 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: reveal 3s ease-in-out;
+        }
+
+        @keyframes reveal {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .checkmark-pop {
+            transition: all 0.3s ease;
+        }
+
+        .checkmark-pop:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 4px 8px rgba(201, 179, 134, 0.3));
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(128, 0, 32, 0.8) 0%, rgba(201, 179, 134, 0.6) 100%);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 3;
+            text-align: center;
+            color: white;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .floating-hearts {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        .masonry-grid {
+            columns: 1;
+            column-gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                columns: 2;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                columns: 4;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #C9B386;
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .testimonial-card {
+            transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-12px) rotate(1deg);
+            box-shadow: 0 35px 70px rgba(128, 0, 32, 0.2);
+        }
+
+        .testimonial-card:nth-child(even):hover {
+            transform: translateY(-12px) rotate(-1deg);
+        }
+
+        .floating-quote {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .testimonial-card:hover .floating-quote {
+            transform: scale(1.2) rotate(15deg);
+        }
+
+        .hearts-animation {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-card:hover .hearts-animation {
+            opacity: 1;
+            animation: heartsFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartsFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) scale(1);
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.1);
+            }
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: #C9B386;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .testimonial-card:hover .star {
+            animation: starTwinkle 1s ease-in-out infinite;
+        }
+
+        @keyframes starTwinkle {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .gradient-border {
+            position: relative;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(45deg, #800020, #C9B386, #800020);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover .gradient-border::before {
+            opacity: 1;
+        }
+
+        .shimmer {
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            background-size: 200% 200%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% -200%;
+            }
+
+            100% {
+                background-position: 200% 200%;
+            }
+        }
+
+        .bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0.3) translateY(50px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -468px 0;
+            }
+
+            100% {
+                background-position: 468px 0;
+            }
+        }
+
+        @keyframes hearts-float {
+
+            0%,
+            100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .floating-hearts {
+            animation: hearts-float 3s ease-in-out infinite;
+        }
+
+        .bounce-in {
+            animation: bounce-in 1s ease-out;
+        }
+
+        .shimmer {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+            background-size: 800px 104px;
+            animation: shimmer 2s infinite;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, rgba(201, 179, 134, 0.1), rgba(128, 0, 32, 0.05));
+            border-radius: 24px;
+            padding: 2px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #C9B386, #800020, #C9B386);
+            border-radius: inherit;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+       .form-floating-label {
+  position: relative;
+}
+
+.form-floating-label label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #6E6E6E;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Move label up and shrink on focus or when input has text */
+.form-floating-label input:focus + label,
+.form-floating-label input:not(:placeholder-shown) + label,
+.form-floating-label textarea:focus + label,
+.form-floating-label textarea:not(:placeholder-shown) + label {
+  opacity: 0; /* Hide it completely */
+  transform: translateY(-10px) scale(0.9);
+}
+
+
+        .heart-pulse {
+            animation: heart-pulse 2s infinite;
+        }
+
+        @keyframes heart-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(0deg);
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0.3) translateY(50px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes hearts-float {
+
+            0%,
+            100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .floating-hearts {
+            animation: hearts-float 3s ease-in-out infinite;
+        }
+
+        .bounce-in {
+            animation: bounce-in 1s ease-out;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, rgba(201, 179, 134, 0.1), rgba(128, 0, 32, 0.05));
+            border-radius: 16px;
+            padding: 2px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #C9B386, #800020, #C9B386);
+            border-radius: inherit;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+        .heart-pulse {
+            animation: heart-pulse 2s infinite;
+        }
+
+        @keyframes heart-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+    
+</head>
+
+<body style="background-color: #F5F5F5; color: #343434; ">
+
+    <nav class="shadow-md fixed w-full z-50" style="background-color: #FBF9F7;">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="" class="text-2xl font-bold font-heading" style="color: #800020;">
+                Krishan Khurana
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="" class="font-medium transition duration-300 hover:font-semibold" style="color: #343434;"
+                        onmouseover="this.style.color='#800020'" onmouseout="this.style.color='#343434'">Home</a></li>
+                <li><a href="#about" class="font-medium transition duration-300 hover:font-semibold"
+                        style="color: #343434;" onmouseover="this.style.color='#800020'"
+                        onmouseout="this.style.color='#343434'">About</a></li>
+                <!-- <li><a href="#services" class="font-medium transition duration-300 hover:font-semibold"
+                    style="color: #343434;" onmouseover="this.style.color='#800020'"
+                    onmouseout="this.style.color='#343434'">Services</a></li> -->
+                <li><a href="#gallery" class="font-medium transition duration-300 hover:font-semibold"
+                        style="color: #343434;" onmouseover="this.style.color='#800020'"
+                        onmouseout="this.style.color='#343434'">Gallery</a></li>
+                <li><a href="#testimonials" class="font-medium transition duration-300 hover:font-semibold"
+                        style="color: #343434;" onmouseover="this.style.color='#800020'"
+                        onmouseout="this.style.color='#343434'">Testimonials</a></li>
+                <!-- <li><a href="#faq" class="font-medium transition duration-300 hover:font-semibold"
+                    style="color: #343434;" onmouseover="this.style.color='#800020'"
+                    onmouseout="this.style.color='#343434'">FAQ</a></li> -->
+                <li><a href="#contact" class="px-4 py-2 rounded font-medium transition duration-300"
+                        style="background-color: #800020; color: #FFFFFF;"
+                        onmouseover="this.style.backgroundColor='#A6002A'"
+                        onmouseout="this.style.backgroundColor='#800020'">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none" style="color: #343434;">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <ul id="mobile-menu" class="hidden md:hidden shadow-md flex flex-col space-y-4 px-6 py-4"
+            style="background-color: #FBF9F7;">
+            <li><a href="#home" class="font-medium transition duration-300" style="color: #343434;"
+                    onmouseover="this.style.color='#800020'" onmouseout="this.style.color='#343434'">Home</a></li>
+            <li><a href="#about" class="font-medium transition duration-300" style="color: #343434;"
+                    onmouseover="this.style.color='#800020'" onmouseout="this.style.color='#343434'">About</a></li>
+            <li><a href="#services" class="font-medium transition duration-300" style="color: #343434;"
+                    onmouseover="this.style.color='#800020'" onmouseout="this.style.color='#343434'">Services</a></li>
+            <li><a href="#gallery" class="font-medium transition duration-300" style="color: #343434;"
+                    onmouseover="this.style.color='#800020'" onmouseout="this.style.color='#343434'">Gallery</a></li>
+            <li><a href="#testimonials" class="font-medium transition duration-300" style="color: #343434;"
+                    onmouseover="this.style.color='#800020'" onmouseout="this.style.color='#343434'">Testimonials</a>
+            </li>
+            <li><a href="#faq" class="font-medium transition duration-300" style="color: #343434;"
+                    onmouseover="this.style.color='#800020'" onmouseout="this.style.color='#343434'">FAQ</a></li>
+            <li><a href="#contact" class="px-4 py-2 rounded font-medium transition duration-300"
+                    style="background-color: #800020; color: #FFFFFF;"
+                    onmouseover="this.style.backgroundColor='#A6002A'"
+                    onmouseout="this.style.backgroundColor='#800020'">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section-->
+    <section class="relative min-h-[100vh] grid place-items-center overflow-hidden"
+        aria-label="Hero – Wedding Officiant">
+        <!-- Background Image Slider -->
+        <div class="absolute inset-0 -z-10">
+            <!-- Slide 1 -->
+            <div class="slider-image absolute inset-0 bg-center bg-cover transition-opacity duration-1000 opacity-100"
+                style="background-image: url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+                role="img" aria-label="Bride and groom holding hands during ceremony">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slider-image absolute inset-0 bg-center bg-cover transition-opacity duration-1000 opacity-0"
+                style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');"
+                role="img" aria-label="Wedding ceremony outdoors">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slider-image absolute inset-0 bg-center bg-cover transition-opacity duration-1000 opacity-0"
+                style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop');"
+                role="img" aria-label="Elegant wedding ceremony setup">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slider-image absolute inset-0 bg-center bg-cover transition-opacity duration-1000 opacity-0"
+                style="background-image: url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=2000&auto=format&fit=crop');"
+                role="img" aria-label="Wedding vows exchange moment">
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 -z-10"
+            style="background: linear-gradient(to top, rgba(128, 0, 32, 0.8) 0%, rgba(128, 0, 32, 0.4) 50%, rgba(128, 0, 32, 0.3) 100%);">
+        </div>
+
+        <div class="container mx-auto px-4 py-20">
+            <div class="max-w-3xl text-center mx-auto" style="color: #FFFFFF;">
+               <p class="inline-block rounded-full px-6 py-2 text-lg font-bold bg-[#FFD700] shadow-lg"
+    style="border: 2px solid #FFC107;  color: #000; text-shadow: 0 0 8px #FFD700;">
+    ⚡ Attention: Hire now for 59$ ⚡
+</p>
+
+                <h1 class="mt-6 text-4xl font-extrabold leading-tight md:text-6xl font-heading" style="color: #FBF9F7;">
+                    Krishan Khurana — Memories That Last
+                </h1>
+
+                <p class="mt-5 text-lg md:text-xl" style="color: rgba(251, 249, 247, 0.95);">
+                    Making every “I do” unforgettable.
+                </p>
+
+
+                <!-- CTAs -->
+                <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center rounded-2xl px-6 py-3 font-semibold shadow-lg transition hover:scale-[1.02] focus:outline-none focus:ring-2"
+                        style="background-color: #800020; color: #FFFFFF; box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3); focus:ring-color: rgba(201, 179, 134, 0.7);"
+                        onmouseover="this.style.backgroundColor='#A6002A'"
+                        onmouseout="this.style.backgroundColor='#800020'">
+                        Book Your Ceremony
+                    </a>
+
+                    <a href="tel:17788965222"
+                        class="inline-flex items-center justify-center rounded-2xl px-6 py-3 font-semibold backdrop-blur transition focus:outline-none focus:ring-2"
+                        style="background-color: transparent; color: #FBF9F7; border: 1px solid rgba(201, 179, 134, 0.6); focus:ring-color: rgba(201, 179, 134, 0.7);"
+                        onmouseover="this.style.backgroundColor='rgba(201, 179, 134, 0.15)'"
+                        onmouseout="this.style.backgroundColor='transparent'">
+                        Call: 778‑896‑5222
+                    </a>
+                </div>
+
+                <!-- Social proof line -->
+                <p class="mt-4 text-sm" style="color: rgba(201, 179, 134, 0.9);">
+                    Heartfelt ceremonies • Memorable moments • Your love, your way
+                </p>
+            </div>
+
+
+
+        </div>
+
+        <!-- Bottom card (optional quick contact) -->
+
+    </section>
+
+    <!-- about us section -->
+    <section id="about" class="relative py-24 overflow-hidden">
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 right-0 w-72 h-72 rounded-full opacity-20 floating-element"
+            style="background: radial-gradient(circle, #C9B386 0%, transparent 70%);"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-10 floating-element"
+            style="background: radial-gradient(circle, #800020 0%, transparent 70%); animation-delay: -3s;"></div>
+
+        <div class="container mx-auto px-6 max-w-6xl relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Image Side with Modern Design -->
+                <div class="order-2 lg:order-1 relative">
+                    <!-- Background decorative shape -->
+                    <div class="absolute -inset-4 morphing-blob opacity-30 -z-10"
+                        style="background: linear-gradient(135deg, rgba(201, 179, 134, 0.3) 0%, rgba(232, 236, 229, 0.5) 100%);">
+                    </div>
+
+                    <!-- Main image -->
+                    <div class="relative hover-lift group cursor-pointer">
+                        <img src="https://scontent.fkhi17-2.fna.fbcdn.net/v/t39.30808-6/516461783_10163041634163489_1811399634164433757_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=lLylGXa5-A4Q7kNvwG--bpL&_nc_oc=AdkA28_tE2I7GP7C91KOCUsu-23XEOcXZk9-L4J8K_gMrNpydF4YPVdkMR-RUp4UOMTST9jgKMOgfZEwoVSrMjD6&_nc_zt=23&_nc_ht=scontent.fkhi17-2.fna&_nc_gid=ODB2CbulbSiCq-zZmKKx3w&oh=00_AfXXiojNAv31aWg1LKKOi2HCl6Aj-GNJw35Nw1id5T3Ngw&oe=68A55847"
+                            alt="Krishan Khurana - Wedding Officiant"
+                            class="w-full rounded-3xl shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
+                            style="box-shadow: 0 20px 60px rgba(128, 0, 32, 0.15);">
+
+                        <!-- Overlay badge -->
+                        <div class="absolute -bottom-6 -right-6 px-6 py-4 rounded-2xl backdrop-blur-md transition-all duration-300 group-hover:scale-110"
+                            style="background: rgba(251, 249, 247, 0.9); border: 2px solid rgba(201, 179, 134, 0.3);">
+                            <div class="text-center">
+                                <div class="font-heading text-2xl font-bold" style="color: #800020;">500+</div>
+                                <div class="text-xs font-semibold tracking-wider" style="color: #B5A373;">CEREMONIES
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating accent elements -->
+                    <div class="absolute -top-8 -left-8 w-16 h-16 rounded-full floating-element opacity-60"
+                        style="background: linear-gradient(135deg, #C9B386 0%, #B5A373 100%); animation-delay: -2s;">
+                    </div>
+                    <div class="absolute -bottom-4 left-1/3 w-8 h-8 rounded-full floating-element opacity-40"
+                        style="background: #800020; animation-delay: -4s;"></div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="order-1 lg:order-2 space-y-8">
+                    <!-- Section tag -->
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full"
+                        style="background: rgba(201, 179, 134, 0.15); border: 1px solid rgba(201, 179, 134, 0.3);">
+                        <div class="w-2 h-2 rounded-full" style="background: #C9B386;"></div>
+                        <span class="text-sm font-semibold tracking-wider" style="color: #800020;">MEET YOUR
+                            OFFICIANT</span>
+                    </div>
+
+                    <!-- Main heading with gradient -->
+                    <h2 class="text-4xl lg:text-5xl font-heading font-bold leading-tight">
+                        <span style="color: #343434;">Meet</span>
+                        <span class="gradient-text">Krishan Khurana</span>
+                    </h2>
+
+                    <!-- Description with modern typography -->
+                    <div class="space-y-6">
+                        <p class="text-lg leading-relaxed" style="color: #343434;">
+                            With a passion for love stories and a commitment to creating unforgettable moments,
+                            <span class="font-semibold px-2 py-1 rounded"
+                                style="background: rgba(201, 179, 134, 0.15); color: #800020;">Krishan Khurana</span>
+                            is a trusted wedding officiant serving couples across British Columbia.
+                        </p>
+
+                        <p class="text-lg leading-relaxed" style="color: #6E6E6E;">
+                            From intimate elopements to grand celebrations, Krishan blends warmth, sincerity,
+                            and professionalism to craft ceremonies that truly reflect your unique journey together.
+                        </p>
+                    </div>
+
+                    <!-- Modern feature list -->
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:scale-[1.02]"
+                            style="background: rgba(251, 249, 247, 0.8); border: 1px solid rgba(201, 179, 134, 0.2);">
+                            <div class="checkmark-pop flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
+                                style="background: linear-gradient(135deg, #800020 0%, #C9B386 100%);">
+                                <svg class="w-4 h-4" style="color: #FFFFFF;" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1" style="color: #343434;">Personalized & Meaningful
+                                </h4>
+                                <p class="text-sm" style="color: #6E6E6E;">Custom vows and rituals that tell your unique
+                                    love story</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:scale-[1.02]"
+                            style="background: rgba(232, 236, 229, 0.6); border: 1px solid rgba(201, 179, 134, 0.2);">
+                            <div class="checkmark-pop flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
+                                style="background: linear-gradient(135deg, #C9B386 0%, #B5A373 100%);">
+                                <svg class="w-4 h-4" style="color: #FFFFFF;" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1" style="color: #343434;">Inclusive & Diverse</h4>
+                                <p class="text-sm" style="color: #6E6E6E;">Celebrating all couples with culturally
+                                    respectful ceremonies</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:scale-[1.02]"
+                            style="background: rgba(251, 249, 247, 0.8); border: 1px solid rgba(201, 179, 134, 0.2);">
+                            <div class="checkmark-pop flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
+                                style="background: linear-gradient(135deg, #800020 0%, #A6002A 100%);">
+                                <svg class="w-4 h-4" style="color: #FFFFFF;" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1" style="color: #343434;">BC-Wide Service</h4>
+                                <p class="text-sm" style="color: #6E6E6E;">Vancouver • Abbotsford • Chilliwack • Surrey
+                                    • Richmond • Coquitlam • Maple Ridge</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to action -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+                            style="background: linear-gradient(135deg, #800020 0%, #A6002A 100%); color: #FFFFFF; box-shadow: 0 10px 30px rgba(128, 0, 32, 0.3);">
+                            Let's Plan Your Day
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+
+                        <a href="tel:17788965222"
+                            class="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02]"
+                            style="background: rgba(201, 179, 134, 0.15); color: #800020; border: 2px solid rgba(201, 179, 134, 0.3);"
+                            onmouseover="this.style.backgroundColor='rgba(201, 179, 134, 0.25)'"
+                            onmouseout="this.style.backgroundColor='rgba(201, 179, 134, 0.15)'">
+                            <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                                </path>
+                            </svg>
+                            778-896-5222
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- gallery section -->
+    <section id="gallery" class="relative py-24 overflow-hidden"
+        style="background: linear-gradient(135deg, #FBF9F7 0%, #E8ECE5 50%, #FBF9F7 100%);">
+
+        <!-- Decorative Elements -->
+        <div class="floating-hearts">
+            <svg class="w-16 h-16" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+
+        <!-- Sparkles -->
+        <div class="sparkle" style="top: 15%; left: 20%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 25%; right: 30%; animation-delay: 1s;"></div>
+        <div class="sparkle" style="bottom: 30%; left: 15%; animation-delay: 2s;"></div>
+        <div class="sparkle" style="bottom: 20%; right: 25%; animation-delay: 1.5s;"></div>
+
+        <div class="container mx-auto px-6">
+            <!-- Modern Heading Section -->
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 px-6 py-3 rounded-full mb-6"
+                    style="background: rgba(201, 179, 134, 0.15); border: 1px solid rgba(201, 179, 134, 0.3);">
+                    <svg class="w-5 h-5" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-semibold tracking-wider" style="color: #800020;">CEREMONY MOMENTS</span>
+                </div>
+
+                <h1 class="text-4xl lg:text-5xl font-heading font-bold mb-6" style="color: #800020;">
+                    Love Stories We've
+                    <span class="relative">
+                        <span style="color: #C9B386;">Celebrated</span>
+                        <svg class="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 100 10"
+                            preserveAspectRatio="none">
+                            <path d="M0,8 Q50,0 100,8" stroke="#C9B386" stroke-width="2" fill="none" opacity="0.6" />
+                        </svg>
+                    </span>
+                </h1>
+
+                <p class="text-lg leading-relaxed max-w-2xl mx-auto" style="color: #6E6E6E;">
+                    Every ceremony is unique, every couple's story is special. Here are glimpses of the
+                    beautiful moments we've had the honor to witness and celebrate across British Columbia.
+                </p>
+            </div>
+
+            <!-- Modern Gallery Grid -->
+            <div class="max-w-7xl mx-auto">
+                <!-- Featured Large Image -->
+                <div class="mb-8">
+                    <div class="gallery-item relative rounded-3xl overflow-hidden h-96 md:h-[500px] group cursor-pointer"
+                        style="box-shadow: 0 25px 60px rgba(128, 0, 32, 0.15);">
+                        <img class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop"
+                            alt="Beautiful outdoor wedding ceremony">
+
+                        <div class="gallery-overlay">
+                            <h3 class="text-2xl font-heading font-bold mb-2">Outdoor Elegance</h3>
+                            <p class="text-sm opacity-90">A breathtaking ceremony surrounded by nature's beauty</p>
+                            <div class="w-12 h-0.5 mx-auto mt-4" style="background: #C9B386;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Masonry Grid -->
+                <div class="masonry-grid">
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop"
+                                alt="Elegant wedding ceremony setup" style="aspect-ratio: 3/4;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">Intimate Vows</h4>
+                                <p class="text-xs opacity-90">Personal promises in a perfect setting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=2000&auto=format&fit=crop"
+                                alt="Wedding vows exchange moment" style="aspect-ratio: 4/5;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">The Moment</h4>
+                                <p class="text-xs opacity-90">When two hearts become one</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://plus.unsplash.com/premium_photo-1690148812608-9942834931a1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Bride and groom holding hands during ceremony" style="aspect-ratio: 3/4;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">Together Forever</h4>
+                                <p class="text-xs opacity-90">Hands joined, hearts united</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2000&auto=format&fit=crop"
+                                alt="Romantic wedding ceremony" style="aspect-ratio: 5/6;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">Pure Joy</h4>
+                                <p class="text-xs opacity-90">Celebrating love in all its beauty</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2000&auto=format&fit=crop"
+                                alt="Wedding celebration moment" style="aspect-ratio: 4/3;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">Celebration</h4>
+                                <p class="text-xs opacity-90">Love, laughter, and happily ever after</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=2000&auto=format&fit=crop"
+                                alt="Wedding ring ceremony" style="aspect-ratio: 3/4;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">Sacred Rings</h4>
+                                <p class="text-xs opacity-90">Symbols of eternal commitment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2000&auto=format&fit=crop"
+                                alt="Beach wedding ceremony" style="aspect-ratio: 5/4;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">Seaside Romance</h4>
+                                <p class="text-xs opacity-90">Where ocean meets eternal love</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item">
+                        <div class="gallery-item relative rounded-2xl overflow-hidden group"
+                            style="box-shadow: 0 15px 40px rgba(128, 0, 32, 0.1);">
+                            <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Mountain wedding ceremony" style="aspect-ratio: 4/5;">
+
+                            <div class="gallery-overlay">
+                                <h4 class="text-lg font-heading font-semibold mb-1">Mountain Magic</h4>
+                                <p class="text-xs opacity-90">Love as high as the peaks around us</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="inline-flex flex-col sm:flex-row gap-4 items-center">
+                    <a href="#contact"
+                        class="px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+                        style="background: linear-gradient(135deg, #800020 0%, #A6002A 100%); color: #FFFFFF; box-shadow: 0 10px 30px rgba(128, 0, 32, 0.3);">
+                        Create Your Moment
+                        <svg class="inline ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+
+                    <p class="text-sm" style="color: #6E6E6E;">
+                        Ready to write your love story? Let's make it unforgettable.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- testimonials section -->
+    <section id="testimonials" class="relative py-20 overflow-hidden">
+
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-10 left-10 w-20 h-20 rounded-full opacity-20"
+            style="background: radial-gradient(circle, #C9B386 0%, transparent 70%); animation: float 4s ease-in-out infinite;">
+        </div>
+        <div class="absolute bottom-20 right-20 w-32 h-32 rounded-full opacity-15"
+            style="background: radial-gradient(circle, #800020 0%, transparent 70%); animation: float 6s ease-in-out infinite reverse;">
+        </div>
+
+        <!-- Header Section -->
+        <div class="text-center max-w-4xl mx-auto mb-16 px-6">
+            <div class="inline-flex items-center space-x-3 px-6 py-3 rounded-full mb-6 bounce-in"
+                style="background: rgba(201, 179, 134, 0.15); border: 1px solid rgba(201, 179, 134, 0.3);">
+                <svg class="w-6 h-6" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-semibold tracking-wider text-lg" style="color: #800020;">LOVE NOTES</span>
+                <svg class="w-6 h-6" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+
+            <h2 class="text-4xl lg:text-5xl font-heading font-bold mb-6" style="color: #800020;">
+                What Couples Are
+                <span class="relative inline-block">
+                    <span style="color: #C9B386;">Saying</span>
+                    <div
+                        class="absolute -bottom-2 left-0 w-full h-3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-40 rounded-full">
+                    </div>
+                </span>
+            </h2>
+
+            <p class="text-xl leading-relaxed max-w-2xl mx-auto" style="color: #6E6E6E;">
+                Real stories from real couples whose special moments we've had the honor to celebrate 💕
+            </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card gradient-border rounded-3xl overflow-hidden group"
+                    style="background: linear-gradient(135deg, rgba(251, 249, 247, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%); backdrop-filter: blur(10px); box-shadow: 0 20px 40px rgba(128, 0, 32, 0.1);">
+
+                    <div class="floating-quote"
+                        style="background: linear-gradient(135deg, #800020 0%, #C9B386 100%); color: white;">"</div>
+
+                    <div class="hearts-animation">
+                        <svg class="w-6 h-6" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Happy bride and groom smiling after ceremony"
+                            class="h-64 w-full object-cover object-center transition-transform duration-500 group-hover:scale-110 shimmer">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/30 to-transparent">
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="star-rating mb-4">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+
+                        <p class="text-lg font-medium leading-relaxed mb-6" style="color: #343434;">
+                            "Krishan made our day so special — his words felt like they were written just for us. Every
+                            moment was perfect!"
+                        </p>
+
+                        <div class="border-t pt-4" style="border-color: rgba(201, 179, 134, 0.3);">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-semibold text-lg" style="color: #800020;">Emily & Ryan</p>
+                                    <p class="text-sm font-medium" style="color: #C9B386;">Intimate Garden Wedding</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center"
+                                        style="background: linear-gradient(135deg, rgba(201, 179, 134, 0.2) 0%, rgba(128, 0, 32, 0.1) 100%);">
+                                        <svg class="w-6 h-6" style="color: #800020;" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card gradient-border rounded-3xl overflow-hidden group"
+                    style="background: linear-gradient(135deg, rgba(232, 236, 229, 0.95) 0%, rgba(251, 249, 247, 0.9) 100%); backdrop-filter: blur(10px); box-shadow: 0 20px 40px rgba(128, 0, 32, 0.1);">
+
+                    <div class="floating-quote"
+                        style="background: linear-gradient(135deg, #C9B386 0%, #B5A373 100%); color: white;">"</div>
+
+                    <div class="hearts-animation">
+                        <svg class="w-6 h-6" style="color: #800020;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+
+                    <div class="relative overflow-hidden">
+                        <img src="https://plus.unsplash.com/premium_photo-1695148227549-9538ed1b901e?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Couple laughing during outdoor ceremony"
+                            class="h-64 w-full object-cover object-center transition-transform duration-500 group-hover:scale-110 shimmer">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/30 to-transparent">
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="star-rating mb-4">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+
+                        <p class="text-lg font-medium leading-relaxed mb-6" style="color: #343434;">
+                            "From the first meeting, Krishan made us feel at ease. Our ceremony was heartfelt and
+                            absolutely unforgettable!"
+                        </p>
+
+                        <div class="border-t pt-4" style="border-color: rgba(201, 179, 134, 0.3);">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-semibold text-lg" style="color: #800020;">Sophia & Daniel</p>
+                                    <p class="text-sm font-medium" style="color: #C9B386;">Mountain View Ceremony</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center"
+                                        style="background: linear-gradient(135deg, rgba(128, 0, 32, 0.15) 0%, rgba(201, 179, 134, 0.2) 100%);">
+                                        <svg class="w-6 h-6" style="color: #C9B386;" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card gradient-border rounded-3xl overflow-hidden group"
+                    style="background: linear-gradient(135deg, rgba(251, 249, 247, 0.95) 0%, rgba(232, 236, 229, 0.9) 100%); backdrop-filter: blur(10px); box-shadow: 0 20px 40px rgba(128, 0, 32, 0.1);">
+
+                    <div class="floating-quote"
+                        style="background: linear-gradient(135deg, #800020 0%, #A6002A 100%); color: white;">"</div>
+
+                    <div class="hearts-animation">
+                        <svg class="w-6 h-6" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+
+                    <div class="relative overflow-hidden">
+                        <img src="https://plus.unsplash.com/premium_photo-1661661509448-35884d4521e3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Joyful couple celebrating in forest setting"
+                            class="h-64 w-full object-cover object-center transition-transform duration-500 group-hover:scale-110 shimmer">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/30 to-transparent">
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="star-rating mb-4">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+
+                        <p class="text-lg font-medium leading-relaxed mb-6" style="color: #343434;">
+                            "We couldn't have asked for a more perfect officiant. Krishan brought warmth and pure joy to
+                            every moment!"
+                        </p>
+
+                        <div class="border-t pt-4" style="border-color: rgba(201, 179, 134, 0.3);">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-semibold text-lg" style="color: #800020;">Olivia & Marcus</p>
+                                    <p class="text-sm font-medium" style="color: #C9B386;">Forest Elopement</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center"
+                                        style="background: linear-gradient(135deg, rgba(201, 179, 134, 0.2) 0%, rgba(128, 0, 32, 0.1) 100%);">
+                                        <svg class="w-6 h-6" style="color: #800020;" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="inline-flex flex-col items-center space-y-4">
+                    <p class="text-lg font-medium" style="color: #6E6E6E;">
+                        Ready to create your own love story? ✨
+                    </p>
+                    <a href="#contact"
+                        class="px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group"
+                        style="background: linear-gradient(135deg, #800020 0%, #A6002A 100%); color: #FFFFFF; box-shadow: 0 15px 35px rgba(128, 0, 32, 0.3);">
+                        Let's Plan Your Perfect Day
+                        <svg class="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- contact section -->
+    <section id="contact" class="relative py-20 overflow-hidden"
+        style="background: linear-gradient(135deg, #FAF7F3 0%, #F5F2ED 100%);">
+
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-16 left-16 w-24 h-24 rounded-full opacity-20"
+            style="background: radial-gradient(circle, #C9B386 0%, transparent 70%); animation: float 6s ease-in-out infinite;">
+        </div>
+        <div class="absolute bottom-24 right-16 w-32 h-32 rounded-full opacity-15"
+            style="background: radial-gradient(circle, #800020 0%, transparent 70%); animation: float 8s ease-in-out infinite reverse;">
+        </div>
+        <div class="absolute top-1/2 left-8 w-16 h-16 rounded-full opacity-10"
+            style="background: radial-gradient(circle, #C9B386 0%, transparent 70%); animation: float 5s ease-in-out infinite;">
+        </div>
+
+        <!-- Floating Hearts -->
+        <div class="absolute top-20 right-1/4 floating-hearts">
+            <svg class="w-8 h-8" style="color: #C9B386; opacity: 0.3;" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <div class="absolute bottom-32 left-1/3 floating-hearts" style="animation-delay: -1s;">
+            <svg class="w-6 h-6" style="color: #800020; opacity: 0.25;" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6">
+
+            <!-- Header Section -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-3 px-6 py-3 rounded-full mb-6 bounce-in"
+                    style="background: rgba(201, 179, 134, 0.15); border: 1px solid rgba(201, 179, 134, 0.3);">
+                    <svg class="w-6 h-6 heart-pulse" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-semibold tracking-wider text-lg" style="color: #800020;">GET IN TOUCH</span>
+                    <svg class="w-6 h-6 heart-pulse" style="color: #C9B386; animation-delay: -1s;" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+
+                <h2 class="text-4xl lg:text-5xl font-heading font-bold mb-6" style="color: #800020;">
+                    Let's Make Your Day
+                    <span class="relative inline-block">
+                        <span style="color: #C9B386;">Unforgettable</span>
+                        <div
+                            class="absolute -bottom-2 left-0 w-full h-3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-40 rounded-full">
+                        </div>
+                    </span>
+                </h2>
+
+                <p class="text-xl leading-relaxed max-w-2xl mx-auto" style="color: #6E6E6E;">
+                    Fill out the form below and Krishan will be in touch to help create a ceremony as unique as your
+                    love story 💕
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="gradient-border rounded-3xl overflow-hidden"
+                style="background: linear-gradient(135deg, rgba(251, 249, 247, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%); backdrop-filter: blur(10px); box-shadow: 0 25px 50px rgba(128, 0, 32, 0.1);">
+
+                <!-- Floating Quote -->
+                <div class="absolute top-4 right-6 w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold z-10"
+                    style="background: linear-gradient(135deg, #800020 0%, #C9B386 100%); color: white;">
+                    "
+                </div>
+
+                <!-- Hearts Animation -->
+                <div class="absolute top-6 left-6 floating-hearts">
+                    <svg class="w-6 h-6" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+
+                <form action="#" method="POST" class="p-8 space-y-8">
+
+                    <!-- Names Row -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="form-floating-label">
+                            <input type="text" id="name" name="name" required placeholder=" "
+                                class="w-full px-4 py-4 rounded-2xl border-2 transition-all duration-300 focus:outline-none shimmer"
+                                style="border-color: rgba(201, 179, 134, 0.3); background: rgba(255, 255, 255, 0.8); color: #343434;"
+                                onfocus="this.style.borderColor='#800020'; this.style.boxShadow='0 0 0 4px rgba(128, 0, 32, 0.1)'"
+                                onblur="this.style.borderColor='rgba(201, 179, 134, 0.3)'; this.style.boxShadow='none'">
+                            <label for="name" class="font-medium">Your Full Name</label>
+                        </div>
+                        <div class="form-floating-label">
+                            <input type="text" id="partner" name="partner" required placeholder=" "
+                                class="w-full px-4 py-4 rounded-2xl border-2 transition-all duration-300 focus:outline-none shimmer"
+                                style="border-color: rgba(201, 179, 134, 0.3); background: rgba(255, 255, 255, 0.8); color: #343434;"
+                                onfocus="this.style.borderColor='#800020'; this.style.boxShadow='0 0 0 4px rgba(128, 0, 32, 0.1)'"
+                                onblur="this.style.borderColor='rgba(201, 179, 134, 0.3)'; this.style.boxShadow='none'">
+                            <label for="partner" class="font-medium">Partner's Full Name</label>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info Row -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="form-floating-label">
+                            <input type="email" id="email" name="email" required placeholder=" "
+                                class="w-full px-4 py-4 rounded-2xl border-2 transition-all duration-300 focus:outline-none shimmer"
+                                style="border-color: rgba(201, 179, 134, 0.3); background: rgba(255, 255, 255, 0.8); color: #343434;"
+                                onfocus="this.style.borderColor='#800020'; this.style.boxShadow='0 0 0 4px rgba(128, 0, 32, 0.1)'"
+                                onblur="this.style.borderColor='rgba(201, 179, 134, 0.3)'; this.style.boxShadow='none'">
+                            <label for="email" class="font-medium">Email Address</label>
+                        </div>
+                        <div class="form-floating-label">
+                            <input type="tel" id="phone" name="phone" placeholder=" "
+                                class="w-full px-4 py-4 rounded-2xl border-2 transition-all duration-300 focus:outline-none shimmer"
+                                style="border-color: rgba(201, 179, 134, 0.3); background: rgba(255, 255, 255, 0.8); color: #343434;"
+                                onfocus="this.style.borderColor='#800020'; this.style.boxShadow='0 0 0 4px rgba(128, 0, 32, 0.1)'"
+                                onblur="this.style.borderColor='rgba(201, 179, 134, 0.3)'; this.style.boxShadow='none'">
+                            <label for="phone" class="font-medium">Phone Number (778-896-5222)</label>
+                        </div>
+                    </div>
+
+                    <!-- Wedding Details Row -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="form-floating-label">
+                            <input type="date" id="date" name="date" placeholder=" "
+                                class="w-full px-4 py-4 rounded-2xl border-2 transition-all duration-300 focus:outline-none shimmer"
+                                style="border-color: rgba(201, 179, 134, 0.3); background: rgba(255, 255, 255, 0.8); color: #343434;"
+                                onfocus="this.style.borderColor='#800020'; this.style.boxShadow='0 0 0 4px rgba(128, 0, 32, 0.1)'"
+                                onblur="this.style.borderColor='rgba(201, 179, 134, 0.3)'; this.style.boxShadow='none'">
+                            <label for="date" class="font-medium">Wedding Date</label>
+                        </div>
+                        <div class="form-floating-label">
+                            <input type="text" id="location" name="location" placeholder=" "
+                                class="w-full px-4 py-4 rounded-2xl border-2 transition-all duration-300 focus:outline-none shimmer"
+                                style="border-color: rgba(201, 179, 134, 0.3); background: rgba(255, 255, 255, 0.8); color: #343434;"
+                                onfocus="this.style.borderColor='#800020'; this.style.boxShadow='0 0 0 4px rgba(128, 0, 32, 0.1)'"
+                                onblur="this.style.borderColor='rgba(201, 179, 134, 0.3)'; this.style.boxShadow='none'">
+                            <label for="location" class="font-medium">Wedding Location</label>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-floating-label">
+                        <textarea id="message" name="message" rows="5" placeholder=" "
+                            class="w-full px-4 py-4 rounded-2xl border-2 transition-all duration-300 focus:outline-none resize-none shimmer"
+                            style="border-color: rgba(201, 179, 134, 0.3); background: rgba(255, 255, 255, 0.8); color: #343434;"
+                            onfocus="this.style.borderColor='#800020'; this.style.boxShadow='0 0 0 4px rgba(128, 0, 32, 0.1)'"
+                            onblur="this.style.borderColor='rgba(201, 179, 134, 0.3)'; this.style.boxShadow='none'"></textarea>
+                        <label for="message" class="font-medium">Tell Us About Your Ceremony Vision</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pt-4">
+                        <button type="submit"
+                            class="px-12 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group relative overflow-hidden"
+                            style="background: linear-gradient(135deg, #800020 0%, #A6002A 100%); color: #FFFFFF; box-shadow: 0 15px 35px rgba(128, 0, 32, 0.3);">
+
+                            <span class="relative z-10 flex items-center justify-center">
+                                Send Our Love Story
+                                <svg class="inline ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </span>
+
+                            <!-- Button shimmer effect -->
+                            <div
+                                class="absolute inset-0 -top-1 -left-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 group-hover:animate-pulse">
+                            </div>
+                        </button>
+
+                        <p class="mt-4 text-sm" style="color: #6E6E6E;">
+                            We'll respond within 24 hours to start planning your perfect ceremony ✨
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Bottom decoration -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                    <div class="flex space-x-2">
+                        <svg class="w-4 h-4 heart-pulse" style="color: #C9B386; opacity: 0.6;" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="w-4 h-4 heart-pulse" style="color: #800020; opacity: 0.4; animation-delay: -0.5s;"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="w-4 h-4 heart-pulse" style="color: #C9B386; opacity: 0.6; animation-delay: -1s;"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <footer class="relative w-full overflow-hidden"
+        style="background: linear-gradient(135deg, #FAF7F3 0%, #F5F2ED 50%, #FFFFFF 100%);">
+
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-8 left-12 w-20 h-20 rounded-full opacity-15"
+            style="background: radial-gradient(circle, #C9B386 0%, transparent 70%); animation: float 8s ease-in-out infinite;">
+        </div>
+        <div class="absolute bottom-16 right-16 w-24 h-24 rounded-full opacity-10"
+            style="background: radial-gradient(circle, #800020 0%, transparent 70%); animation: float 6s ease-in-out infinite reverse;">
+        </div>
+        <div class="absolute top-1/2 right-8 w-16 h-16 rounded-full opacity-12"
+            style="background: radial-gradient(circle, #C9B386 0%, transparent 70%); animation: float 7s ease-in-out infinite;">
+        </div>
+
+        <!-- Floating Hearts -->
+        <div class="absolute top-12 right-1/3 floating-hearts">
+            <svg class="w-6 h-6" style="color: #C9B386; opacity: 0.2;" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <div class="absolute bottom-20 left-1/4 floating-hearts" style="animation-delay: -1.5s;">
+            <svg class="w-5 h-5" style="color: #800020; opacity: 0.15;" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-16 flex flex-col items-center relative">
+
+            <!-- Header Badge -->
+            <div class="inline-flex items-center space-x-3 px-6 py-3 rounded-full mb-8 bounce-in"
+                style="background: rgba(201, 179, 134, 0.15); border: 1px solid rgba(201, 179, 134, 0.3);">
+                <svg class="w-5 h-5 heart-pulse" style="color: #C9B386;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-semibold tracking-wider" style="color: #800020;">CERTIFIED OFFICIANT</span>
+                <svg class="w-5 h-5 heart-pulse" style="color: #C9B386; animation-delay: -1s;" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+
+            <!-- Logo/Name -->
+            <div class="text-center mb-6">
+                <h2 class="text-3xl lg:text-4xl font-heading font-bold mb-2" style="color: #800020;">
+                    Krishan
+                    <span class="relative inline-block">
+                        <span style="color: #C9B386;">Khurana</span>
+                        <div
+                            class="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-30 rounded-full">
+                        </div>
+                    </span>
+                </h2>
+                <div class="flex items-center justify-center space-x-2 mt-2">
+                    <div class="w-8 h-px"
+                        style="background: linear-gradient(to right, transparent, #C9B386, transparent);"></div>
+                    <svg class="w-4 h-4 heart-pulse" style="color: #800020;" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <div class="w-8 h-px"
+                        style="background: linear-gradient(to left, transparent, #C9B386, transparent);"></div>
+                </div>
+            </div>
+
+            <!-- Tagline -->
+            <p class="text-center max-w-2xl text-lg font-medium leading-relaxed mb-8" style="color: #6E6E6E;">
+                Creating heartfelt, personalized wedding ceremonies across Vancouver, Abbotsford, Chilliwack, Squamish,
+                Surrey, Richmond, Coquitlam, and Maple Ridge.
+                <span class="font-semibold" style="color: #800020;">Your love story, beautifully told</span> 💕
+            </p>
+
+            <!-- Contact Info Cards -->
+            <div class="grid md:grid-cols-2 gap-6 w-full max-w-2xl mb-8">
+                <!-- Phone Card -->
+                <div class="gradient-border rounded-2xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]"
+                    style="background: linear-gradient(135deg, rgba(251, 249, 247, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%); backdrop-filter: blur(10px);">
+                    <div class="p-6 text-center">
+                        <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
+                            style="background: linear-gradient(135deg, rgba(128, 0, 32, 0.1) 0%, rgba(201, 179, 134, 0.1) 100%);">
+                            <svg class="w-6 h-6" style="color: #800020;" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p class="font-semibold text-lg mb-1" style="color: #800020;">Call or Text</p>
+                        <a href="tel:7788965222" class="text-lg font-medium hover:underline transition-all duration-300"
+                            style="color: #C9B386;">
+                            778-896-5222
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Location Card -->
+                <div class="gradient-border rounded-2xl overflow-hidden group transition-all duration-300 hover:scale-[1.02]"
+                    style="background: linear-gradient(135deg, rgba(232, 236, 229, 0.9) 0%, rgba(251, 249, 247, 0.8) 100%); backdrop-filter: blur(10px);">
+                    <div class="p-6 text-center">
+                        <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
+                            style="background: linear-gradient(135deg, rgba(201, 179, 134, 0.1) 0%, rgba(128, 0, 32, 0.1) 100%);">
+                            <svg class="w-6 h-6" style="color: #C9B386;" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <p class="font-semibold text-lg mb-1" style="color: #800020;">Service Areas</p>
+                        <p class="text-sm font-medium leading-relaxed" style="color: #6E6E6E;">
+                            Vancouver • Abbotsford • Chilliwack<br>
+                            Squamish • Surrey • Richmond<br>
+                            Coquitlam • Maple Ridge
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative Hearts Divider -->
+            <div class="flex items-center space-x-4 mb-6">
+                <div class="w-12 h-px"
+                    style="background: linear-gradient(to right, transparent, #C9B386, transparent);"></div>
+                <svg class="w-4 h-4 heart-pulse" style="color: #800020;" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <svg class="w-3 h-3 heart-pulse" style="color: #C9B386; animation-delay: -0.5s;" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <svg class="w-4 h-4 heart-pulse" style="color: #800020; animation-delay: -1s;" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <div class="w-12 h-px" style="background: linear-gradient(to left, transparent, #C9B386, transparent);">
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t-2 border-gradient"
+            style="border-image: linear-gradient(to right, transparent, rgba(201, 179, 134, 0.3), transparent) 1;">
+            <div class="max-w-7xl mx-auto px-6 py-6 text-center">
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
+                    <p class="text-sm font-medium" style="color: #6E6E6E;">
+                        © 2025 Krishan Khurana. All rights reserved.
+                    </p>
+                    <div class="hidden md:block w-1 h-1 rounded-full" style="background: #C9B386;"></div>
+                    <p class="text-sm font-medium" style="color: #800020;">
+                        Crafting Beautiful Ceremonies with Love
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle logic ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+        });
+
+
+        // --- Slider logic (moved outside) ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-image');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            // Hide all other slides
+            slides.forEach((slide, i) => {
+                slide.style.opacity = (i === index) ? '1' : '0';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initialize the slider by showing the first slide when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (slides.length > 0) {
+                showSlide(0);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
